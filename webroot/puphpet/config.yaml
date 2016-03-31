@@ -19,8 +19,8 @@ vagrantfile:
                         check_guest_tools: 0
                         update_guest_tools: 0
                 machines:
-                    vflm_sm6bj95rnuxq:
-                        id: rpgdev
+                    vflm_vs44xjyieqhe:
+                        id: rmsdev
                         network:
                             private_network: 192.168.99.85
                         hostname: rms.computer
@@ -34,8 +34,8 @@ vagrantfile:
                     - '--verbose'
                     - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'
         synced_folder:
-            vflsf_d0dws1iwavm1:
-                source: 'C:\\AppDev\\rpgms\\webroot\\www'
+            vflsf_vc6x3yt7447i:
+                source: 'C:\\AppDev\\RMSMaker\\webroot\\www'
                 target: /usr/share/nginx/html
                 sync_type: rsync
                 smb:
@@ -100,7 +100,7 @@ locale:
 firewall:
     install: '1'
     rules:
-        fr_68ebtkn9ncmr:
+        fr_agk54roeulyo:
             port:
                 - '9200'
             priority: '100'
@@ -121,8 +121,10 @@ nginx:
         names_hash_bucket_size: 128
     upstreams: {  }
     vhosts:
-        nxv_pring8pl0acd:
+        nxv_hihu2wei05cs:
             server_name: rms.dev
+            server_aliases:
+                - www.rms.dev
             www_root: /usr/share/nginx/html
             listen_port: '80'
             index_files:
@@ -139,7 +141,7 @@ nginx:
             rewrite_to_https: '1'
             spdy: '1'
             locations:
-                nxvl_lew15tjmyzbp:
+                nxvl_14fktrsqckpi:
                     location: /
                     autoindex: 'off'
                     internal: 'false'
@@ -152,7 +154,7 @@ nginx:
                     fastcgi_split_path: ''
                     proxy: ''
                     proxy_redirect: ''
-                nxvl_zjp0itbeq3w0:
+                nxvl_q9yxdknxy60d:
                     location: '~ \.php$'
                     autoindex: 'off'
                     internal: 'false'
@@ -185,7 +187,7 @@ apache:
         - proxy_fcgi
         - rewrite
     vhosts:
-        av_2bsdzm3bhs0h:
+        av_1puhlzvmro7v:
             servername: awesome.dev
             serveraliases:
                 - www.awesome.dev
@@ -204,7 +206,7 @@ apache:
             ssl_protocol: ''
             ssl_cipher: ''
             directories:
-                avd_68fd9u6n9cxq:
+                avd_n1k9m9s48ioi:
                     path: /var/www/awesome
                     options:
                         - Indexes
@@ -216,7 +218,7 @@ apache:
                         - 'all granted'
                     custom_fragment: ''
                     files_match:
-                        avdfm_vel146rr0hqf:
+                        avdfm_g97cvcbc0uz1:
                             path: \.php$
                             sethandler: 'proxy:fcgi://127.0.0.1:9000'
                             custom_fragment: ''
@@ -247,7 +249,7 @@ php:
     fpm_ini:
         error_log: /var/log/php-fpm.log
     fpm_pools:
-        phpfp_azccthjlvz5c:
+        phpfp_yfvpnrqd4pbq:
             ini:
                 prefix: www
                 listen: '127.0.0.1:9000'
@@ -290,7 +292,7 @@ drush:
 ruby:
     install: '1'
     versions:
-        rv_kctb4hwej5n2:
+        rv_6l7o6wayz448:
             default: '1'
             bundler: '1'
             version: 1.9.3
@@ -326,15 +328,15 @@ mariadb:
         override_options: {  }
     adminer: 0
     users:
-        mariadbnu_qh649f7gqr03:
+        mariadbnu_b0bwg251gg8x:
             name: dbuser
             password: '123'
     databases:
-        mariadbnd_xuujx04avvd2:
+        mariadbnd_la3jqq6fk5yw:
             name: dbname
             sql: ''
     grants:
-        mariadbng_0al8ypgknzld:
+        mariadbng_0b3awtd4xdwe:
             user: dbuser
             table: '*.*'
             privileges:
@@ -348,7 +350,7 @@ mysql:
     adminer: '1'
     users: {  }
     databases:
-        mysqlnd_ssll22ul9bkx:
+        mysqlnd_yhrzh5iamwo2:
             name: symfony
             sql: ''
     grants: {  }
