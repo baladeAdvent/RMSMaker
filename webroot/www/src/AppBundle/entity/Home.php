@@ -21,6 +21,13 @@ class Home
      */
     private $id;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255)
+     */
+    private $name;
+
 
     /**
      * Get id
