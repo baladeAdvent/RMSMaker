@@ -8,3 +8,4 @@
 /webroot/.vagrant/machines/rmsdev/virtualbox/action_provision
 /webroot/www/vendor
 /webroot/www/app/cache
+/webroot/www/app/logs
